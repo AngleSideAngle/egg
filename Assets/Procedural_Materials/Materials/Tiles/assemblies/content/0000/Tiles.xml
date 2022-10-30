@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sbsdescription SYSTEM "sbsdescription.dtd">
+<sbsdescription formatversion="2.1" asmuid="2454132789" cookerbuild="3377640674" content="full">
+	<graphs count="1">
+		<graph pkgurl="pkg://Tiles_Broken" label="Tiles_Broken" primaryinput="Tile_pattern">
+			<sbspresets/>
+			<guigroups>
+				<guigroup identifier="Tiles" label="Tiles"/>
+				<guigroup identifier="Colors" label="Colors"/>
+				<guigroup identifier="Ground tiles" label="Ground tiles"/>
+				<guigroup identifier="Damage" label="Damage"/>
+				<guigroup identifier="Surface" label="Surface"/>
+			</guigroups>
+			<outputs count="4">
+				<output uid="720319021" identifier="basecolor"
+					format="0" width="256" height="256" mipmaps="0" dynamicsize="yes">
+					<outputgui label="Base Color" group="Material">
+						<channels>
+							<channel names="baseColor"/>
+						</channels>
+					</outputgui>
+				</output>
+				<output uid="720319023" identifier="normal"
+					format="16" width="256" height="256" mipmaps="0" dynamicsize="yes">
+					<outputgui label="Normal" group="Material">
+						<channels>
+							<channel names="normal"/>
+						</channels>
+					</outputgui>
+				</output>
+				<output uid="720319017" identifier="roughness"
+					format="12" width="256" height="256" mipmaps="0" dynamicsize="yes">
+					<outputgui label="Roughness" group="Material">
+						<channels>
+							<channel names="roughness"/>
+						</channels>
+					</outputgui>
+				</output>
+				<output uid="720319019" identifier="metallic"
+					format="12" width="256" height="256" mipmaps="0" dynamicsize="yes">
+					<outputgui label="Metallic" group="Material">
+						<channels>
+							<channel names="metallic"/>
+						</channels>
+					</outputgui>
+				</output>
+			</outputs>
+			<inputs count="21">
+				<input uid="1483322396" identifier="$outputsize"
+					type="8" default="8,8" alteroutputs="720319017,720319019,720319021,720319023" alternodes="0"/>
+				<input uid="253469262" identifier="$randomseed"
+					type="4" default="0" alteroutputs="720319017,720319019,720319021,720319023" alternodes="0"/>
+				<input uid="777141303" identifier="Num_X"
+					type="4" default="5" alteroutputs="720319017,720319019,720319021,720319023" alternodes="0">
+					<inputgui widget="slider" label="X" group="Tiles">
+						<guislider  min="1" max="64" step="1"/>
+					</inputgui>
+				</input>
+				<input uid="777142076" identifier="Num_Y"
+					type="4" default="5" alteroutputs="720319017,720319019,720319021,720319023" alternodes="0">
+					<inputgui widget="slider" label="Y" group="Tiles">
+						<guislider  min="1" max="64" step="1"/>
+					</inputgui>
+				</input>
+				<input uid="779895935" identifier="Space_between_Tiles"
+					type="0" default="0.91" alteroutputs="720319017,720319019,720319021,720319023" alternodes="0">
+					<inputgui widget="slider" label="Space between tiles" group="Tiles">
+						<guislider  min="0" max="2" step="0.01"/>
+					</inputgui>
+				</input>
+				<input uid="779939016" identifier="Zaoblenie_kachlicky"
+					type="0" default="0.15" alteroutputs="720319017,720319019,720319021,720319023" alternodes="0">
+					<inputgui widget="slider" label="Rounding edge of tiles" group="Tiles">
+						<guislider  min="0" max="1" clamp="on" step="0.01"/>
+					</inputgui>
+				</input>
+				<input uid="779883146" identifier="Color_of_Tiles"
+					type="3" default="0.862745,0.862745,0.862745,1" alteroutputs="720319021" alternodes="0">
+					<inputgui widget="color" label="Tiles color" group="Colors"/>
+				</input>
+				<input uid="779887155" identifier="Dirt_between_Tiles"
+					type="0" default="0.49" alteroutputs="720319021" alternodes="0">
+					<inputgui widget="slider" label="Grayscale of dirt between tiles" group="Colors">
+						<guislider  min="0" max="1" step="0.01"/>
+					</inputgui>
+				</input>
+				<input uid="777314474" identifier="Ground_color"
+					type="3" default="0.655172,0.546632,0.413043,1" alteroutputs="720319021" alternodes="0">
+					<inputgui widget="color" label="Ground color" group="Colors"/>
+				</input>
+				<input uid="777313397" identifier="Image_and_color_blend"
+					type="0" default="1" alteroutputs="720319021" alternodes="0">
+					<inputgui widget="slider" label="Image and color blend" group="Colors">
+						<guislider  min="0" max="1" step="0.01"/>
+					</inputgui>
+				</input>
+				<input uid="779935348" identifier="Level_of_Dirt"
+					type="0" default="0" alteroutputs="720319021" alternodes="0">
+					<inputgui widget="slider" label="Level of dirt" group="Colors">
+						<guislider  min="0" max="1" step="0.01"/>
+					</inputgui>
+				</input>
+				<input uid="779882515" identifier="Level_of_Damage"
+					type="0" default="0.73" alteroutputs="720319017,720319019,720319021,720319023" alternodes="0">
+					<inputgui widget="slider" label="Level of damge" group="Damage">
+						<guislider  min="0" max="1" clamp="on" step="0.01"/>
+					</inputgui>
+				</input>
+				<input uid="779897472" identifier="Intensity_of_small_Damage"
+					type="4" default="0" alteroutputs="720319017,720319019,720319021,720319023" alternodes="0">
+					<inputgui widget="slider" label="Intensity of small damage" group="Damage">
+						<guislider  min="0" max="64" step="1"/>
+					</inputgui>
+				</input>
+				<input uid="777344930" identifier="Disorder_damage"
+					type="0" default="50" alteroutputs="720319017,720319019,720319021,720319023" alternodes="0">
+					<inputgui widget="slider" label="Disorder damage" group="Damage">
+						<guislider  min="0" max="100" clamp="on" step="0.01"/>
+					</inputgui>
+				</input>
+				<input uid="777352592" identifier="Noise_damage_"
+					type="4" default="14" alteroutputs="720319017,720319019,720319021,720319023" alternodes="0">
+					<inputgui widget="slider" label="Noise damage" group="Damage">
+						<guislider  min="0" max="64" step="1"/>
+					</inputgui>
+				</input>
+				<input uid="779893308" identifier="Roughness_Intensity"
+					type="0" default="0" alteroutputs="720319017" alternodes="0">
+					<inputgui widget="slider" label="Level of roughness" group="Surface">
+						<guislider  min="-1" max="1" clamp="on" step="0.01"/>
+					</inputgui>
+				</input>
+				<input uid="779893284" identifier="Metallic_Intensity"
+					type="0" default="0" alteroutputs="720319019" alternodes="0">
+					<inputgui widget="slider" label="Level of metallic" group="Surface">
+						<guislider  min="-1" max="1" clamp="on" step="0.01"/>
+					</inputgui>
+				</input>
+				<input uid="779936683" identifier="Level_of_Noise_Reflection"
+					type="0" default="0.5" alteroutputs="720319017,720319019" alternodes="0">
+					<inputgui widget="slider" label="Level of Noise Reflection" group="Surface">
+						<guislider  min="0" max="1" step="0.01"/>
+					</inputgui>
+				</input>
+				<input uid="777314957" identifier="Ground_intensity"
+					type="1" default="0,0.06" alteroutputs="720319017,720319019,720319021,720319023" alternodes="0">
+					<inputgui widget="slider" label="Ground intensity" group="Ground tiles">
+						<guislider  min="0,0" max="1,1" step="0.01" label0="Variation" label1="Contrast"/>
+					</inputgui>
+				</input>
+				<input uid="777316054" identifier="Under_ground"
+					type="0" default="1" alteroutputs="720319017,720319019,720319021,720319023" alternodes="0">
+					<inputgui widget="slider" label="Under ground" group="Ground tiles">
+						<guislider  min="0" max="1" step="0.01"/>
+					</inputgui>
+				</input>
+				<input uid="777299427" identifier="Tile_pattern"
+					type="5" alteroutputs="720319021" alternodes="0">
+					<inputgui widget="image" label="Tile pattern" group="Colors">
+						<guiimage  colortype="color" format="fixed">
+						<channels/>
+						</guiimage>
+					</inputgui>
+				</input>
+			</inputs>
+		</graph>
+	</graphs>
+</sbsdescription>
