@@ -5,12 +5,12 @@ using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
-    [SerializeField] Button startButton, instrButton;
+    // [SerializeField] Button startButton, instrButton;
 
     void Start()
     {
-        Button start = startButton.GetComponent<Button>();
-        Button instr = instrButton.GetComponent<Button>();
+        // Button start = startButton.GetComponent<Button>();
+        // Button instr = instrButton.GetComponent<Button>();
     }
 
     public void GameStart()
