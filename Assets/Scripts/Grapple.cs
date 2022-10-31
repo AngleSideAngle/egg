@@ -15,6 +15,7 @@ public class Grapple : MonoBehaviour
     Rigidbody rb;
     Hook hook;
     MoveBehaviour movement;
+    AudioSource audio;
 
     bool isPulling = false;
     float startTime = 0;
@@ -69,6 +70,7 @@ public class Grapple : MonoBehaviour
 
         movement.SetJump(true);
         startTime = Time.time;
+        hook.GetComponent<AudioSource>().Play();
     }
 
     public void DestroyHook()

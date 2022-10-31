@@ -6,11 +6,13 @@ public class Treasure : MonoBehaviour
 {
     [SerializeField] Mesh replacementMesh;
 
-    MeshFilter MeshFilter;
+    MeshFilter meshFilter;
+    AudioSource audio;
 
     public void Awake()
     {
-        MeshFilter = GetComponent<MeshFilter>();
+        meshFilter = GetComponent<MeshFilter>();
+        audio = GetComponent<AudioSource>();
     }
 
     public void ReactToHit()
@@ -20,7 +22,8 @@ public class Treasure : MonoBehaviour
 
     private IEnumerator Open()
     {
-        MeshFilter.mesh = replacementMesh;
+        meshFilter.mesh = replacementMesh;
+        audio.Play();
         yield return new WaitForSeconds(1.5f);
         gameObject.SetActive(false);
     }

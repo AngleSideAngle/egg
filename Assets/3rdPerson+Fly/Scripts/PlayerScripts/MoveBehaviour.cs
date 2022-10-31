@@ -17,6 +17,8 @@ public class MoveBehaviour : GenericBehaviour
 	private bool jump;                              // Boolean to determine whether or not the player started a jump.
 	private bool isColliding;                       // Boolean to determine if the player has collided with an obstacle.
 
+	private AudioSource audio;
+
 	// Start is always called after any Awake functions.
 	void Start()
 	{
@@ -29,6 +31,8 @@ public class MoveBehaviour : GenericBehaviour
 		behaviourManager.SubscribeBehaviour(this);
 		behaviourManager.RegisterDefaultBehaviour(this.behaviourCode);
 		speedSeeker = runSpeed;
+
+		audio = GetComponent<AudioSource>();
 	}
 
 	// Update is used to set features regardless the active behaviour.
@@ -38,6 +42,7 @@ public class MoveBehaviour : GenericBehaviour
 		if (!jump && Input.GetButtonDown(jumpButton) && behaviourManager.IsCurrentBehaviour(this.behaviourCode) && !behaviourManager.IsOverriding())
 		{
 			jump = true;
+			audio.Play();
 		}
 	}
 
