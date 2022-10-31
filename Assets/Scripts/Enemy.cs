@@ -9,7 +9,8 @@ public class Enemy : MonoBehaviour
     {
         if (collision.gameObject.name == "Player")
         {
-            Destroy(collision.gameObject);
+            GameBehavior game = GameObject.Find("GameManager").GetComponent<GameBehavior>();
+            game.Lose();
         }
     }
 

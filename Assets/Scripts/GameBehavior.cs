@@ -14,10 +14,29 @@ public class GameBehavior : MonoBehaviour
         style.fontSize = 20;
         style.normal.textColor = Color.white;
     }
+
+    void Update()
+    {
+        if (Items >= maxItems)
+        {
+            Win();
+        }
+    }
+
     public int Items
     {
         get { return itemsCollected; }
         set { itemsCollected = value; }
+    }
+
+    public void Lose()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Loss");
+    }
+
+    public void Win()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Win");
     }
 
     public void OnGUI()
