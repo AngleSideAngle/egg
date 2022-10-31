@@ -55,7 +55,6 @@ public class Grapple : MonoBehaviour
     {
         DestroyHook();
         CreateHook();
-    
     }
 
     private void CreateHook()
@@ -72,7 +71,7 @@ public class Grapple : MonoBehaviour
         startTime = Time.time;
     }
 
-    private void DestroyHook()
+    public void DestroyHook()
     {
         if (hook is null) { return; }
 

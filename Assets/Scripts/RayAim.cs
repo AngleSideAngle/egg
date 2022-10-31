@@ -5,14 +5,16 @@ using UnityEngine;
 public class RayAim : MonoBehaviour
 {
     private Camera camera;
+    private Grapple grapple;
     private GameBehavior gameManager;
-    [SerializeField] private GameObject obj;
+    // [SerializeField] private GameObject obj;
 
     // Start is called before the first frame update
     void Start()
     {
         camera = GetComponent<Camera>();
-        // gameManager = GameObject.Find("GameManager").GetComponent<GameBehavior>();
+        grapple = camera.GetComponent<Grapple>();
+        gameManager = GameObject.Find("GameManager").GetComponent<GameBehavior>();
     }
 
     // Update is called once per frame
@@ -26,31 +28,20 @@ public class RayAim : MonoBehaviour
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit))
             {
+                Debug.Log("raycast hit");
                 GameObject hitObject = hit.transform.gameObject;
 
-                Target target = hitObject.GetComponent<Target>();
+                Treasure target = hitObject.GetComponent<Treasure>();
+                Debug.Log(hitObject);
                 if (target != null)
                 {
+                    Debug.Log("hit isnt null");
                     gameManager.Items += 1;
                     target.ReactToHit();
                 }
-                else
-                {
-                    StartCoroutine(SphereIndicator(hit.point));
-                }
+                return;
             }
+            grapple.DestroyHook();
         }
-    }
-
-    private IEnumerator SphereIndicator(Vector3 pos) {
-        // create new object for 5 seconds
-        GameObject instance = Instantiate(obj, pos + Vector3.up, Quaternion.identity);
-        yield return new WaitForSeconds(8);
-
-        // disable rigidbody after 5 seconds
-        // var rb = instance.GetComponent<Rigidbody>();
-        // rb.isKinematic = true;
-        // rb.detectCollisions = false;
-        Destroy(instance);
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameBehavior : MonoBehaviour
 {
-    // public int maxItems = 3;
+    [SerializeField] int maxItems = 3;
     private int itemsCollected = 0;
 
     private GUIStyle style = new GUIStyle();
@@ -22,6 +22,6 @@ public class GameBehavior : MonoBehaviour
 
     public void OnGUI()
     {
-        GUI.Box(new Rect(20, 50, 150, 25), "Eggs ascended: " + itemsCollected, style);
+        GUI.Box(new Rect(20, 50, 150, 25), "Treasure found: " + itemsCollected + "/" + maxItems, style);
     }
 }
